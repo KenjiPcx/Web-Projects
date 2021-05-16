@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+img {
+    width: 60vw;
+    height: 80vh;
+    transition: transform 200ms;
+    object-fit: cover;
+}
+
+img.left {
+    transform: translateX(-100vw);
+}
+
+img.right {
+    transform: translateX(100vw);
+}
+
+img.next {
+    display: none;
+}
