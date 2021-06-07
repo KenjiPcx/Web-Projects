@@ -1,0 +1,102 @@
+:root {
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    --bg-primary-color: rgb(76, 55, 95);
+    --bg-secondary-color: rgb(106, 78, 218);
+    --primary-color: rgb(115, 16, 207);
+    --secondary-color: rgb(148, 129, 231);
+
+    --navbar-width: 3.25rem;
+    --navbar-hover-width: 12rem;
+    --navbar-current-width: var(--navbar-width);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(41, 39, 39, 0.3);
+    background-color: var(--secondary-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+main {
+    margin-left: var(--navbar-current-width); 
+    padding: 0 10px;
+    transition: margin-left 300ms ease-in;
+}
+
+.navbar {
+    margin: 0;
+    outline: 0;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    height: 100vh;
+    width: var(--navbar-width);
+    background-color: var(--primary-color);
+    transition: width 300ms ease-in;
+}
+
+.navbar:hover {
+    width: var(--navbar-hover-width);
+    transition: width 300ms ease-in;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+}
+
+.navbar-item {
+    width: 100%;
+}
+
+.navbar-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.25rem;
+    color: black;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: filter 300ms ease-in-out;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: var(--bg-secondary-color);
+    color: var(--secondary-color);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1.5rem;
+    width: 50%;
+    color:rgba(0, 0, 0, 0);
+    transition: color 300ms ease 1000ms;
+}
+
+.navbar:hover .link-text {
+    display: block;
+    color:rgba(0, 0, 0, 1);
+    transition: color 300ms ease 1000ms;
+}
